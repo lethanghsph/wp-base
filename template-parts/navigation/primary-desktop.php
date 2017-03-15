@@ -3,17 +3,17 @@
  * Displays top navigation
  *
  * @package WordPress
- * @subpackage Twenty_Seventeen
+ * @subpackage Twenty_Seventeenp
  * @since 1.0
  * @version 1.0
  */
 
 ?>
-<nav id="site-navigation" class="main-navigation pull-right" role="navigation" aria-label="<?php _e( 'Top Menu', 'wpbase' ); ?>">
+<nav role="navigation" aria-label="<?php esc_html__( 'Primary Menu Desktop', 'wpbase' ); ?>">
 	<?php wp_nav_menu( array(
 		'theme_location' => 'top',
-		'menu_id'        => 'top-menu',
-		'menu_class'     => 'navs',
+		'menu_id'        => '',
+		'menu_class'     => '',
 	) ); ?>
 
 </nav><!-- #site-navigation -->

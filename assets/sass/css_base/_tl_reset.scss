@@ -4,7 +4,8 @@
 }
 html, body {
 	font-size: 14px;
-	overflow: hidden;
+	overflow-x: hidden;
+	position: relative;
 }
 /* Links */
 a {

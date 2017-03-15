@@ -42,8 +42,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if ( is_single() ) : ?>
-		<?php twentyseventeen_entry_footer(); ?>
-	<?php endif; ?>
-
 </article><!-- #post-## -->
