@@ -4,7 +4,6 @@
  *
  * @package wpbase
  */
-
 ?>
 
 <header id="site-header" class="site-header">

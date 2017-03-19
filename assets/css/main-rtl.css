@@ -2237,9 +2237,7 @@ dd {
   list-style: none; }
   .navs ul {
     list-style: none;
-    z-index: 99;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
+    z-index: 99; }
   .navs li {
     position: relative; }
   .navs a {
@@ -2254,7 +2252,7 @@ dd {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: -250px;
   width: 250px;
   height: 120%;
   background-color: #17171e;
@@ -2315,7 +2313,7 @@ dd {
   z-index: 9002;
   display: none; }
 
-.tl-menu-toggle {
+.tl-submenu-toggle {
   position: absolute;
   left: 10%;
   top: 22%; }

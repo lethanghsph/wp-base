@@ -74,7 +74,7 @@
 	ul {
 		list-style: none;
 		z-index: 99;
-		@include transition( all .3s ease );
+		// @include transition( all .3s ease );
 	}
 	li {
 		position: relative;
@@ -167,8 +167,9 @@
 
 
 
-.tl-menu-toggle {
+.tl-submenu-toggle {
 	position: absolute;
 	right: 10%;
 	top: 22%;
+	z-index: 999;
 }

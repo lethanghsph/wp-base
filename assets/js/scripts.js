@@ -2,107 +2,180 @@
  *
  * -----------------------------------------------------------
  *
- * WPBase js
+ * Start menu js
  *
  * -----------------------------------------------------------
  *
  */
+(function( document, $, undefined ){
+	'use strict';
+
+	// Method of plugin.
+	var methods = (function() {
+		// Menu toggle.
+		var menu = {};
+		(function() {
+			function menuToggle() {
+				var	_this = this,
+					elements = {
+						slide: $( '#side-slide' ),
+						overlay: $( '#body_overlay' ),
+						side_header: $( '#site-header' ),
+						$el: $( '#site-header' ).find('.header-icon__menu').find('i')
+					};
+			
+				elements.$el.off('click');
+				$( elements.$el, elements.side_header ).click(function(e){
+					e.preventDefault();
+					_this.Toggle(elements);
+				})
+
+				elements.overlay.off('click');
+				$( elements.overlay, elements.side_header ).click(function(){
+					_this.Toggle(elements);
+				})
+			}
+			menuToggle.prototype.Toggle = function(elements) {
+				if ( elements.$el.hasClass('fa-bars')) {
+					elements.$el.removeClass('fa-bars').addClass('fa-times');
+					elements.slide.animate({ 'right':0 },300);
+					$('body').animate({ 'left':-125 },300);
+					elements.overlay.fadeIn(300);
+				} else {
+					elements.$el.addClass('fa-bars').removeClass('fa-times');
+					elements.slide.animate({ 'right': -250 },300);
+					$('body').animate({ 'left':0 },300);
+					elements.overlay.fadeOut(300);
+				}
+			}
+			menu.menuToggle = menuToggle;
+		})();
+
+		var subMenu = {};
+		// Submenu.
+		(function() {
+			function addArrows(options) {
+				this.options = options;
+				$('li:has(ul) > a').prepend(this.renderArrow.bind(this));
+			}
+			addArrows.prototype.renderArrow = function() {
+				var arrow = '<span class="tl-submenu-toggle">' + this.options.arrows.down + '</span>';
+					
+					this.$arrow = $(arrow);
+					this.$arrow.on('click', this.toggleSubmenu.bind(this));
+					return this.$arrow;
+			}
+			addArrows.prototype.toggleSubmenu = function(event) {
+				event.preventDefault();
+
+				var el = event.target,
+					ul = $(el).closest('li').find('ul:first'),
+					ul_next = $(el).closest('li').siblings().find('ul');
+					
+				// Toggle.
+				ul_next.stop(true, true).slideUp('1000');
+				ul.stop(true, true).slideToggle('1000');
+			}
+			subMenu.addArrows = addArrows;
+		})();
+
+		// Publish method.
+		return {
+			// destroy: function() {
+
+			// },
+			init: function(options) {
+				return this.each(function () {
+					var $this = $(this);
+					if ($this.data('tlMenuOptions')) {
+						return;
+					}
+					var op = $.extend({}, $.fn.tl_menu.defaults, options);
+					
+					$this.data('tlMenuOptions', op);
+					var tlmenu = new subMenu.addArrows(op),
+						tlsubmenu = new menu.menuToggle;
+				});
+			}
+		};
+	
+	})();
+	// Initialize plugin.
+	$.fn.tl_menu = function (method, args) {
+		if (methods[method]) {
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+		}
+		else if (typeof method === 'object' || ! method) {
+			return methods.init.apply(this, arguments);
+		}
+		else {
+			return $.error('Method ' +  method + ' does not exist on jQuery.fn.superfish');
+		}
+	};
+
+	// Declare default option.
+	$.fn.tl_menu.defaults = {
+		responsive_point : 768,
+		arrows: {
+			up: '<i class="fa fa-sort-asc"></i>',
+			down: '<i class="fa fa-sort-desc"></i>'
+		},
+		custom_menu_icon: true
+	};
+	$(document).ready(function(){
+		$( '.side-slide__menu' ).tl_menu();
+	});	
+})( document, jQuery );
+
 (function( document, $ ){
 	'use strict';
-	/**
-	 * WPBASE object.
-	 */
-	$.WPBASE = $.WPBASE || {};
-	
-	var $body = $('body');
 
-  // ======================================================
-  // TL MENU JS.
-  // ------------------------------------------------------
-	$.fn.TL_MENU = function( options ) {
+	window.WPBase = window.WPBase || {};
 
-		var defaults = {
-			responsive_point : 768,
-		};
-		var options = $.extend( defaults, options );
+	var Extra = {
+		initExtra: function() {
+			// this.menuToggle();
+		},
+		// menuToggle: function() {
+		// 	var slide       = $( '#side-slide' ),
+		// 		overlay     = $( '#body_overlay' ),
+		// 		side_header = $( '#site-header' ),
+		// 		$el = side_header.find('.header-icon__menu').find('i');
 
-		return this.each(function(){
-			var $this = $(this);
+		// 	var Toggle = function() {
+		// 		if ( $el.hasClass('fa-bars')) {
+		// 			$el.removeClass('fa-bars').addClass('fa-times');
+		// 			slide.animate({ 'right':0 },300);
+		// 			$('body').animate({ 'left':-125 },300);
+		// 			overlay.fadeIn(300);
+		// 		} else {
+		// 			$el.addClass('fa-bars').removeClass('fa-times');
+		// 			slide.animate({ 'right': -250 },300);
+		// 			$('body').animate({ 'left':0 },300);
+		// 			overlay.fadeOut(300);
+		// 		}
+		// 	}
 
-			var setMenu = function() {
-				$('li:has(ul) > a', $this).append('<span class="tl-menu-toggle"><i class="fa fa-sort-desc"></i></span>');
-			};
+		// 	$el.off('click');
+		// 	$( $el, side_header ).click(function(e){
+		// 		e.preventDefault();
+		// 		Toggle();
+		// 	})
 
-			var toggleSubmenu = function() {
-				$('.tl-menu-toggle', $this).off('click').on('click', function(e){
+		// 	overlay.off('click');
+		// 	$( overlay, side_header ).click(function(e){
+		// 		Toggle();
+		// 	})
+		// }
+	};
 
-					e.preventDefault();
-
-					var $this = $(this),
-							ul = $this.closest('li').find('ul:first'),
-							ul_next = $this.closest('li').siblings().find('ul');
-
-					// Toggle.
-					ul_next.stop(true, true).slideUp('1000');
-					ul.stop(true, true).slideToggle('1000');
-
-				});
-
-			};
-
-			var toggleMenu = function() {
-				var side_header = $( '#site-header' ),
-						slide       = $( '#side-slide' ),
-						overlay     = $( '#body_overlay' ),
-						menu_icon   = $( '.header-icon__menu' );
-
-				// Open/Close side slide.
-				var menu_toggle = function() {
-					if ( ! menu_icon.hasClass('open')  ) {
-
-						menu_icon.addClass('open');
-						slide.animate({ 'right':0 }, 300);
-						$('body').animate({ 'left':-125 }, 300);
-						overlay.fadeIn(300);
-
-					} else {
-
-						menu_icon.removeClass('open');
-						slide.animate({ 'right': -250 }, 300);
-						$('body').animate({ 'left':0 }, 300);
-						overlay.fadeOut(300);
-
-					}
-				};
-
-				menu_icon.off('click');
-
-				$( menu_icon, side_header ).click(function(e){
-					e.preventDefault();
-					menu_toggle();
-				})
-
-				overlay.off('click');
-				$( overlay, side_header ).click(function(e){
-					menu_toggle();
-				})
-
-			};
-
-			// Run menu.
-			if ( $(window).width() <= options.responsive_point ) {
-				setMenu();
-				toggleMenu();
-				toggleSubmenu();
-			}
-
-		});
-	}
-
-	// Run.
 	$(document).ready(function(){
-		$( '.side-slide__menu' ).TL_MENU();
-	});
+		// Extend WPBase method.
+		$.extend(true, WPBase, Extra);
 
-
+		// Run.
+		// WPBase.initExtra();
+	});	
 })( document, jQuery );
+
+

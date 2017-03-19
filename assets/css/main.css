@@ -2237,9 +2237,7 @@ dd {
   list-style: none; }
   .navs ul {
     list-style: none;
-    z-index: 99;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
+    z-index: 99; }
   .navs li {
     position: relative; }
   .navs a {
@@ -2315,10 +2313,11 @@ dd {
   z-index: 9002;
   display: none; }
 
-.tl-menu-toggle {
+.tl-submenu-toggle {
   position: absolute;
   right: 10%;
-  top: 22%; }
+  top: 22%;
+  z-index: 999; }
 
 input[type="text"],
 input[type="email"],
