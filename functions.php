@@ -42,3 +42,8 @@ require get_parent_theme_file_path( '/inc/template-tags.php' );
  */
 require get_parent_theme_file_path( '/inc/template-functions.php' );
 
+/**
+ * Additional features to allow styling of the templates.
+ */
+require get_parent_theme_file_path( '/inc/wpbase.php' );
+

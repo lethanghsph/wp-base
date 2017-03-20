@@ -26,7 +26,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
-	<?php get_template_part( 'template-parts/header/header' ); ?>
+	<?php echo WPBase()->header->actionHeader() ?>
 
 	<div class="site-content-contain">
 		<div id="content" class="site-content">

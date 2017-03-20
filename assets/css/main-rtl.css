@@ -2316,7 +2316,8 @@ dd {
 .tl-submenu-toggle {
   position: absolute;
   left: 10%;
-  top: 22%; }
+  top: 22%;
+  z-index: 999; }
 
 input[type="text"],
 input[type="email"],
