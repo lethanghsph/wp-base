@@ -1,0 +1,102 @@
+// ...
+$arrow-default-size: 10px !default;
+$arrow-default-color: #fff !default;
+$arrow-default-border-size: 1px !default;
+$arrow-default-border-color: #ddd !default;
+
+// ...
+@mixin box-arrow($position, $size: $arrow-default-size, $boder-size: $arrow-default-border-size, $color: $arrow-default-color, $border-color: $arrow-default-border-color) {
+  $background-color: $color;
+  $before-size: $size + round($boder-size * 1.41421356);
+
+  position: relative;
+  background-color: $background-color;
+  border: $boder-size solid $border-color;
+
+  &:before,
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-width: $size;
+    border-color: hsla(hue($color), saturation($color), lightness($color), 0);
+  }
+
+  &:before {
+    border-width: $before-size;
+    border-color: hsla(hue($border-color), saturation($border-color), lightness($border-color), 0);
+  }
+
+  @if $position == 'top' {
+    &:before,
+    &:after {
+      left: 50%;
+      bottom: 100%;
+    }
+
+    &:after {
+      margin-left: -($size);
+      border-bottom-color: $color;
+    }
+
+    &:before {
+      margin-left: -($before-size);
+      border-bottom-color: $border-color;
+    }
+  } @else if $position == 'bottom' {
+    &:before,
+    &:after {
+      top: 100%;
+      left: 50%;
+    }
+
+    &:after {
+      margin-left: -($size);
+      border-top-color: $color;
+    }
+
+    &:before {
+      margin-left: -($before-size);
+      border-top-color: $border-color;
+    }
+  } @else if $position == 'right' {
+    &:before,
+    &:after {
+      top: 50%;
+      left: 100%;
+    }
+
+    &:after {
+      margin-top: -($size);
+      border-left-color: $color;
+    }
+
+    &:before {
+      margin-top: -($before-size);
+      border-left-color: $border-color;
+    }
+  } @else if $position == 'left' {
+    &:before,
+    &:after {
+      top: 50%;
+      right: 100%;
+    }
+
+    &:after {
+      margin-top: -($size);
+      border-right-color: $color;
+    }
+
+    &:before {
+      margin-top: -($before-size);
+      border-right-color: $border-color;
+    }
+  }
+}

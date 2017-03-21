@@ -1,0 +1,70 @@
+// ==
+@include selection() {
+  color: $color-white;
+  background: $hover-color;
+}
+
+html, body {
+  height: 100%;
+  font-size: 14px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a, button {
+  transition: all 0.25s ease-in-out;
+
+  &:focus,
+  &:active {
+    outline: none !important;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+
+label {
+  font-size: 12px;
+  font-family: $font-family-heading;
+  font-weight: 400;
+
+  .required,
+  sup { color: red; }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.4;
+}
+/* Lists */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}

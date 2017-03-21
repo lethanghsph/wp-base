@@ -1,0 +1,64 @@
+//==
+#wp-calendar {
+  width: 100%;
+  font-weight: 400;
+  border-collapse: separate;
+  border-spacing: 5px;
+  margin-left: -2px;
+
+  caption {
+    display: none;
+  }
+
+  thead th {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  tbody td {
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 1px;
+    border: 1px solid $border-color;
+    padding: 5px;
+  }
+
+  tbody td:hover {
+    border-color: $primary-color;
+  }
+
+  tbody td.pad {
+    border: 0;
+  }
+
+  #today {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+
+  #prev a,
+  #next a {
+    color: #888;
+    font-weight: 400;
+    position: relative;
+    text-transform: uppercase;
+    bottom: -9px;
+    margin-bottom: 1px;
+  }
+
+  #prev {
+    text-align: left;
+  }
+
+  #next {
+    text-align: right;
+  }
+
+  tbody td a,
+  #prev a:hover,
+  #next a:hover {
+    color: $primary-color;
+  }
+}

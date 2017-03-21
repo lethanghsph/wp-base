@@ -1,0 +1,6 @@
+//==
+.comments-area {
+  .comment-reply-title {
+    @extend .reply-comment-title;
+  }
+}

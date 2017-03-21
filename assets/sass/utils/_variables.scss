@@ -1,0 +1,131 @@
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+//== Colors
+$color-white:          #fff !default;
+$color-dark:           #333 !default;
+
+//== Socials colors
+$color-facebook:       #3b5998 !default;
+$color-twitter:        #55acee !default;
+$color-google-plus:    #dd4b39 !default;
+$color-youtube:        #b31217 !default;
+$color-tumblr:         #35465c !default;
+$color-slideshare:     #e98325 !default;
+
+//== Colors
+$main-color:           #333 !default;
+$primary-color:        #ffa200 !default;
+$hover-color:          $primary-color !default;
+$border-color:         #e1e1e1 !default;
+$gray-color:           #898989;
+
+//!!
+$blog-border-color:       $border-color;
+$footer-default-color:    #acacac;
+$header-height:           80px;
+$header-border-color:     #e9e8e8;
+
+//!!
+$awe-menubar-height:                          80px !default;
+$awe-menubar-border:                          $border-color;
+
+$awe-menubar-font-size:                       14px !default;
+$awe-menubar-font-weight:                     700 !default;
+$awe-menubar-text-transform:                  uppercase !default;
+
+$awe-menubar-color:                           #333 !default;
+$awe-menubar-link-color:                      $awe-menubar-color !default;
+$awe-menubar-link-color-hover:                $hover-color !default;
+$awe-menubar-link-color-active:               $awe-menubar-link-color-hover !default;
+
+$awe-menubar-background:                      #ffffff !default;
+$awe-menubar-background-link-hover:           transparent !default;
+$awe-menubar-background-link-active:          transparent !default;
+
+//== Breakpoints
+$breakpoints:          (tn: 320px, xs: 480px, sm: 768px, md: 992px, lg: 1200px);
+
+// --------------------------------------------------
+// Bootstrap Variable
+// --------------------------------------------------
+
+//== Colors
+$brand-primary:                  $primary-color;
+$brand-success:                  #59b408;
+$brand-info:                     #3cbc8d;
+$brand-warning:                  #fca13f;
+$brand-danger:                   #fd6a4d;
+
+//== Scaffolding
+$link-color:                     #333;
+$link-hover-color:               $hover-color;
+$link-hover-decoration:          none;
+
+// Border-radius
+$border-radius-base:             0;
+$border-radius-small:            0;
+$border-radius-large:            1px;
+
+//== Typography
+$font-family-base:               Roboto, Arial, sans-serif;
+$font-family-heading:            Montserrat, Arial, sans-serif;
+
+$headings-font-family:           $font-family-heading;
+$headings-font-weight:           700;
+
+// Fonts
+$icon-font-path:                 '../fonts/';
+
+//== Form states and alerts
+$state-success-text:             #fff;
+$state-success-bg:               $brand-success;
+$state-success-border:           $brand-success;
+
+$state-info-text:                #fff;
+$state-info-bg:                  $brand-info;
+$state-info-border:              $brand-info;
+
+$state-warning-text:             #fff;
+$state-warning-bg:               $brand-warning;
+$state-warning-border:           $brand-warning;
+
+$state-danger-text:              #fff;
+$state-danger-bg:                $brand-danger;
+$state-danger-border:            $brand-danger;
+
+//== Buttons
+$btn-font-weight:                700;
+
+$btn-default-color:              #333;
+$btn-default-bg:                 #fff;
+$btn-default-border:             #ccc;
+
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             $btn-primary-bg;
+
+$btn-success-color:              #fff;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             $btn-success-bg;
+
+$btn-info-color:                 #fff;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                $btn-info-bg;
+
+$btn-warning-color:              #fff;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             $btn-warning-bg;
+
+$btn-danger-color:               #fff;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              $btn-danger-bg;
+
+//== Tooltips
+$tooltip-max-width:           250px;
+$tooltip-color:               #666;
+$tooltip-bg:                  white;
+$tooltip-opacity:             1;
+$tooltip-arrow-width:         10px;
+$tooltip-arrow-color:         #eee;

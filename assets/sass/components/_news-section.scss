@@ -1,0 +1,60 @@
+//==
+.section-post {
+
+}
+.section-post-media {
+  float: left;
+  margin-right: 30px;
+  width: 50%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.section-post-body {
+  overflow: hidden;
+}
+
+.section-post-time {
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 10px;
+
+  small {
+    color: #898989;
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+.section-post-title {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.section-post-excerpt {
+  color: $gray-color;
+  font-size: 14px;
+  line-height: 23px;
+  margin-bottom: 15px;
+}
+
+.read-more,
+.read-more > a {
+  color: #898989;
+  font-size: 12px;
+  border-bottom: solid 2px;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+@include media('<md') {
+  .section-post-media {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+  }
+}

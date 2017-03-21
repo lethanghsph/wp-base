@@ -1,0 +1,425 @@
+//
+.category-text {
+  text-align: center;
+  padding: 100px 0 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  h3 {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: $gray-color;
+    margin-bottom: 50px;
+  }
+}
+
+.awe-media-overlay .category-text {
+  padding: 70px 70px 0;
+
+  p {
+    color: #fff;
+    font-size: 14px;
+  }
+}
+
+.cate-section-trait {
+  position: relative;
+  @include clearfix();
+
+  & + & {
+    margin-top: 100px;
+  }
+
+  h2 {
+    font-size: 70px;
+    line-height: 70px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+
+    > small {
+      color: $gray-color;
+      font-size: 30px;
+      display: block;
+      letter-spacing: 5px;
+    }
+  }
+
+  .lead {
+    color: $gray-color;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 50px;
+  }
+
+  .small-image {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .content {
+    float: left;
+  }
+
+  .large-image {
+    float: right;
+  }
+
+  &.reverse,
+  &:nth-child(even) {
+    .content {
+      float: right;
+    }
+
+    .large-image {
+      float: left;
+    }
+  }
+
+  @include media('<lg') {
+    display: inline-block;
+
+    .small-image {
+      display: none;
+    }
+
+    .content {
+      position: absolute;
+      float: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.75);
+      padding-top: 80px;
+    }
+
+    .large-image {
+      float: none;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @include media('<md') {
+    h2 {
+      font-size: 40px;
+      line-height: 40px;
+
+      > small {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @include media('<sm') {
+    h2 {
+      font-size: 30px;
+      line-height: 30px;
+
+      > small {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &.trait-wp {
+    min-height: 600px;
+
+    .small-image img {
+      max-width: 270px;
+    }
+
+    > [class*="vc_col"] {
+      position: static;
+    }
+
+    .content {
+      float: left;
+    }
+
+    &.reverse {
+      .content {
+        float: right;
+      }
+
+      .small-image {
+        right: 40px;
+      }
+    }
+
+    @include media('<lg') {
+      display: block;
+
+      .content {
+        position: static;
+      }
+    }
+
+    @include media('<sm') {
+      text-align: center;
+
+      & + & {
+        margin-top: 50px;
+        padding-top: 50px;
+        border-top: solid 1px $border-color;
+      }
+
+      h2 {
+        font-size: 40px;
+        line-height: 40px;
+
+        > small {
+          font-size: 20px;
+        }
+      }
+
+      .content {
+        position: static;
+        padding-top: 0;
+      }
+    }
+
+    @include media('<xs') {
+      h2 {
+        font-size: 30px;
+        line-height: 30px;
+
+        > small {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include media('<lg') {
+  .cate4-wrapper {
+    text-align: center;
+  }
+}
+
+.cate-section-gutter {
+  position: relative;
+  padding-top: 200%;
+  white-space: break-word;
+
+  .awe-media,
+  .category-text {
+    position: absolute;
+  }
+
+  .awe-media {
+    top: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .category-text {
+    top: 50%;
+    height: 50%;
+  }
+
+  &.inverse {
+    .category-text {
+      top: 0;
+      height: 50%;
+    }
+
+    .awe-media {
+      top: inherit;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+
+  &.cate-overlay {
+    padding-top: 100%;
+
+    .awe-media {
+      z-index: 100;
+      height: 100% !important;
+    }
+
+    .category-text {
+      color: #fff;
+      background-color: rgba(51, 51, 51, 0.5);
+      top: 0%;
+      height: 100%;
+      z-index: 101;
+      padding: 100px 0 0;
+      width: 100%;
+
+      @include media('<md') {
+        padding-top: 30px;
+      }
+
+      @include media('<sm') {
+        padding-top: 40px;
+      }
+
+      @include media('<xs') {
+        padding-top: 30px;
+      }
+
+      p {
+        color: #fff;
+      }
+
+      .btn {
+        color: #fff;
+        border-color: #fff;
+
+        &:hover,
+        &:focus {
+          color: #333;
+          background-color: #fff;
+        }
+      }
+    }
+
+    &.inverse {
+      .category-text {
+        top: 0;
+        height: 100%;
+      }
+
+      .awe-media {
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  @include media('<lg') {
+    .category-text {
+      padding-top: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 100%;
+      overflow: hidden;
+
+      h3, p {
+        white-space: initial;
+        word-wrap: break-word;
+      }
+
+      p {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  @include media('<md') {
+    .category-text h3 {
+      font-size: 24px;
+    }
+  }
+}
+
+@include media('<sm') {
+  .cate-section-gutter-wrapper {
+
+    .cate-section-gutter {
+      padding-top: 100%;
+      margin-bottom: 30px;
+      
+      .awe-media,
+      .category-text {
+        top: 0;
+        height: 100%;
+      }
+    }
+
+    > .row {
+      > [class*="col-"] {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.category-media-caption .vc_column-inner {
+  height: 487px;
+  background-clip: content-box;
+  color: #fff;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include media('<lg', '>=md') {
+    height: 420px;
+  }
+
+  @include media('<md') {
+    height: 250px;
+  }
+
+  &:before {
+    background: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    content: "";
+    left: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+  }
+
+  > .wpb_wrapper {
+    display: table;
+    height: 100%;
+
+    > .wpb_content_element {
+      height: 100%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .content {
+    padding: 25px;
+    position: relative;
+  
+    .btn {
+      margin-top: 50px;
+    }
+  }
+}
+
+// Animation
+.cate-section-gutter.cate-overlay {
+  overflow: hidden;
+
+  &:hover .awe-media-image {
+    transform: scale(1.1);
+  }
+}
+
+// 
+.home-cate-media {
+  @include media('<sm') {
+    .awe-media-header {
+      background: #333;
+      height: 200px;
+    }
+  }
+}
+
+.Awe_image_carousel .owl-item img {
+  max-height: 80px;
+}

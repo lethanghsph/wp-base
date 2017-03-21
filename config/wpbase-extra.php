@@ -9,7 +9,9 @@
  * //
  */
 class WPBase_Extra {
-	// Initialize.
+	/**
+	 * Initialize.
+	 */
 	public function __construct() {
 		add_filter( 'body_class', array( $this, 'wpbase_body_classes' ) );
 	}
@@ -69,8 +71,6 @@ class WPBase_Extra {
 			} else {
 				$classes[] = 'sidebar-none';
 			}
-		} else {
-			$classes[] = 'sidebar-right';
 		}
 
 		$classes = apply_filters( 'event2_layout_class', $classes );

@@ -1,0 +1,94 @@
+// Variables
+//------------------------------------------------------
+$awe-pagination-background-color:                  #fff !default;
+$awe-pagination-background-color-hover:            #333 !default;
+$awe-pagination-background-color-active:           #333 !default;
+
+$awe-pagination-font-color:                        #333 !default;
+$awe-pagination-font-color-hover:                  #fff !default;
+$awe-pagination-font-color-disabled:               #999 !default;
+
+$awe-pagination-border-color:                      transparent !default;
+$awe-pagination-navigation-border-color:           #e1e1e1 !default;
+
+/**
+ * --------------------------------------------------
+ * Pagination
+ * --------------------------------------------------
+ */
+ .pagination {
+  & > li {
+    display: inline-block;
+    float: none;
+  }
+
+  & > li > a,
+  & > li > span {
+    font-size: 12px;
+    margin-left: 0;
+    font-family: $font-family-heading;
+    padding: 4px 10px;
+
+    color: $awe-pagination-font-color;
+    background-color: $awe-pagination-background-color;
+    border-color: $awe-pagination-border-color;
+  }
+
+  & > li > a:hover,
+  & > li > span:hover,
+  & > li > a:focus,
+  & > li > span:focus {
+    color: $awe-pagination-font-color-hover;
+    background-color: $awe-pagination-background-color-hover;
+    border-color: $awe-pagination-border-color;
+  }
+
+  & > .active > a,
+  & > .active > span,
+  & > .active > a:hover,
+  & > .active > span:hover,
+  & > .active > a:focus,
+  & > .active > span:focus {
+    color: $awe-pagination-font-color-hover;
+    background-color: $awe-pagination-background-color-active;
+    border-color: $awe-pagination-background-color-active;
+  }
+
+  & > .disabled > span,
+  & > .disabled > span:hover,
+  & > .disabled > span:focus,
+  & > .disabled > a,
+  & > .disabled > a:hover,
+  & > .disabled > a:focus {
+    color: $awe-pagination-font-color-disabled;
+    background-color: $awe-pagination-background-color;
+    border-color: $awe-pagination-border-color;
+  }
+
+  & > li.pagination-next > span,
+  & > li.pagination-prev > span {
+    opacity: 0.5;
+  }
+
+  & > li.pagination-next > span,
+  & > li.pagination-prev > span,
+  & > li.pagination-next > a,
+  & > li.pagination-prev > a {
+    border-radius: 0 !important;
+    border-color: $awe-pagination-navigation-border-color;
+    padding: 4px 8px;
+
+    &:hover,
+    &:focus {
+      border-color: #333;
+    }
+  }
+
+  & > li.pagination-next {
+    margin-left: 15px;
+  }
+
+  & > li.pagination-prev {
+    margin-right: 15px;
+  }
+}

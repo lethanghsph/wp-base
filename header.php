@@ -28,5 +28,5 @@
 
 	<?php print( WPBase()->header->actionHeader() ); // WPCS: XSS OK. ?>
 
-	<div id="content" <?php WPBase()->extra->wpbase_content_class() ?>>
+	<div id="site-content" <?php WPBase()->extra->wpbase_content_class() ?>>
 		<div id="layout" <?php WPBase()->extra->wpbase_layout_class() ?>>

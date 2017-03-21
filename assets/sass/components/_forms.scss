@@ -1,114 +1,161 @@
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-  color: #666;
-  background: #fff;
-  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-  border: 1px solid #bbb;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  display: block;
-  padding: 0.7em;
-  width: 100%;
+//==
+.form-control {
+  border-color: $color-dark;
+
+  &-dark,
+  &.dark {
+    border-color: $color-dark;
+  }
+
   &:focus {
-    color: #222;
-    border-color: #333;
+    box-shadow: none;
+    border-color: $primary-color !important;
+  }
+}
+
+.form-control {
+  box-shadow: none;
+
+  &.form-small {
+    height: 30px;
+  }
+
+  &-search {
+    border-color: $border-color;
+    border-radius: 35px;
+    padding-left: 35px;
+  }
+}
+
+// Form search
+.form-search {
+  position: relative;
+
+  &-icon {
+    color: #999;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -8px;
+    margin-left: 15px;
+  }
+}
+
+.hide-show-password-wrapper {
+  position: relative;
+  width: 100% !important;
+
+  .hide-show-password-toggle {
+    color: #999;
+    position: absolute;
+    border: none;
+    background: transparent;
+    right: 8px !important;
+    top: 8px !important;
+
+    &:hover,
+    &:focus {
+      background: #f3f3f3;
+    }
   }
 }
 
 select {
-  border: 1px solid #bbb;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  height: 3em;
-  max-width: 100%;
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAAV1BMVEWpqan///+pqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqakr0C7NAAAAHHRSTlMAAAgKDxAUFhkcHSAuMKm2uby+v8HGytbZ297y/8MrnAAAAE1JREFUeAFjYEQD1BFgQAK4BHj4mIEcVkFemICQjAATA4uYjAhMgF1chp9NVEaCA24Gh4SMtIwkJ5KhnJIyUlwotnAJc4MootxBE+8DAD4hA1La0r4ZAAAAAElFTkSuQmCC) no-repeat right 5px center !important;
+  // background-size: 8px 10px !important;
+
+  // Have to include vendor prefixes as the `appearance` property isn't part of the CSS spec.
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  // IE9 hacks to hide the background-image and reduce padding
+  padding-right: 22px !important;
+  background-image: none \9;
+
+  // Hides the default caret in IE11
+  &::-ms-expand {
+    opacity: 0;
+  }
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-  margin-right: 0.5em;
-}
-
-input[type="radio"] + label,
-input[type="checkbox"] + label {
-  font-weight: 400;
-}
-
-button,
-input[type="button"],
-input[type="submit"] {
-  background-color: #222;
-  border: 0;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  color: #fff;
-  cursor: pointer;
+.input-number {
+  // border: solid 1px #ccc;
   display: inline-block;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: 800;
-  line-height: 1;
-  padding: 1em 2em;
-  text-shadow: none;
-  -webkit-transition: background 0.2s;
-  transition: background 0.2s;
-  &:hover,
-  &:focus {
-    background: #767676;
-    border-radius: none;
+  overflow: hidden;
+
+  position: relative;
+  width: 115px;
+
+  input[type="number"] { -moz-appearance: textfield; }
+  ::-webkit-inner-spin-button { -webkit-appearance: none;}
+  ::-webkit-outer-spin-button { -webkit-appearance: none;}
+
+  input[type="number"],
+  input[type="text"] {
+    color: #333;
+    font-weight: 400;
+
+    width: 100%;
+    height: 33px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    font-size: 14px;
+
+    border-radius: 0;
+    border: none;
+    display: inline-block;
+    text-align: center !important;
+
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+
+    &:focus {
+      border-color: #aaa;
+    }
+  }
+
+  .number-inc,
+  .number-dec {
+    color: white;
+    background-color: #333;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    font-weight: 700;
+
+    width: 30px;
+    height: 33px;
+    line-height: 33px;
+
+    font-weight: 400;
+    text-align: center;
+
+    position: absolute;
+    top: 0;
+
+    border: solid 1px #333;
+
+    &:hover,
+    &:focus {
+      color: white;
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+
+  .number-inc {
+    right: 0;
+  }
+
+  .number-dec {
+    left: 0;
   }
 }
 
-input + button,
-input + input[type="button"],
-input + input[type="submit"] {
-  padding: 0.75em 2em;
-}
-
-input[type="reset"],
-input[type="button"] {
-  background-color: #ddd;
-  color: #222;
-  &:hover,
-  &:focus {
-    background: #bbb;
-  }
-}
-
-/* Placeholder text color -- selectors need to be separate to work. */
-::-webkit-input-placeholder {
-  color: #333;
-  font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-:-moz-placeholder {
-  color: #333;
-  font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-::-moz-placeholder {
-  color: #333;
-  font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
-  opacity: 1;
-  /* Since FF19 lowers the opacity of the placeholder by default */
-}
-
-:-ms-input-placeholder {
-  color: #333;
-  font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+.input-group-coupon .btn {
+  padding-top: 8px;
+  padding-bottom: 7px;
 }

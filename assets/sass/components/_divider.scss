@@ -1,0 +1,63 @@
+//==
+$divider-border-color:       $border-color !default;
+$divider-margin:             25px !default;
+$divider-super-margin:       $divider-margin * 2 !default;
+
+$divider-font-weight:        700 !default;
+$divider-transform:          uppercase !default;
+
+//==
+.divider {
+    display: block;
+    margin: $divider-margin 0;
+    line-height: 1;
+    height: 0;
+    font-weight: $divider-font-weight;
+    text-transform: $divider-transform;
+    letter-spacing: 2px;
+    color: #333;
+    opacity: 0.5;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &.light {
+        color: #fff;
+    }
+
+    &.super {
+        margin: $divider-super-margin 0;
+    }
+}
+
+.divider:not(.horizontal) {
+    height: 1px;
+    border-top: 1px solid $divider-border-color;
+}
+
+.divider.horizontal {
+    display: table;
+    white-space: nowrap;
+    height: auto;
+    line-height: 1;
+    overflow: hidden;
+    text-align: center;
+
+    &:before,
+    &:after {
+        background-image: url('../img/divider.png');
+        content: '';
+        display: table-cell;
+        position: relative;
+        top: 50%;
+        width: 50%;
+        background-repeat: no-repeat;
+    }
+
+    &:before {
+        background-position: right $divider-margin top 50%;
+    }
+
+    &:after {
+        background-position: left $divider-margin top 50%;
+    }
+}

@@ -1,0 +1,134 @@
+.woocommerce {
+  .wc-proceed-to-checkout a {
+    display: inline-block !important;
+  }
+
+  table.shop_table {
+    border-radius: 0;
+    border: solid 1px $border-color;
+    border-collapse: collapse;
+
+    @extend .table;
+  }
+}
+
+.woocommerce-cart {
+  .woocommerce {
+    .button {
+      @extend .btn-lg;
+    }
+  }
+
+  table.cart {
+    img {
+      width: inherit;
+    }
+
+    .coupon .input-text {
+      height: 42px;
+      line-height: 42px;
+      width: 200px !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+  }
+
+  .product-name {
+    font-family: $headings-font-family;
+    font-size: 14px;
+  }
+
+  .quantity .qty {
+    width: 80px !important;
+  }
+
+  .quantity label {
+    display: none;
+  }
+
+  .amount {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.yith-wcwl-share {
+  margin-bottom: 0;
+
+  h4 {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  ul {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.woocommerce table.wishlist_table {
+  font-size: 100%;
+
+  .awe-button {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+
+  .product-name a {
+    font-family: $headings-font-family;
+  }
+
+  .product-remove {
+    padding: 8px !important;
+  }
+}
+
+.wishlist_table tr td,
+.wishlist_table tr th.wishlist-delete,
+.wishlist_table tr th.product-checkbox {
+  text-align: left;
+}
+
+.wishlist-in-stock {
+  @extend .label;
+  @extend .label-info;
+  
+  color: white !important;
+  border-radius: 0;
+}
+
+.woocommerce-checkout #payment {
+  border-radius: 0;
+  background-color: transparent;
+
+  .payment_methods label {
+    font-size: 14px;
+  }
+
+  ul.payment_methods {
+    border-bottom: none;
+  }
+
+  .payment_box {
+    font-size: 14px !important;
+    border-radius: 0 !important;
+    background: white !important;
+  }
+
+  div.payment_box::after {
+    content: none;
+  }
+}
+
+.woocommerce a.remove {
+  background: none;
+  font-weight: 400;
+  color: #999 !important;
+
+  &:hover,
+  &:focus {
+    background-color: transparent !important;
+    color: $hover-color !important;
+  }
+}

@@ -14,15 +14,14 @@
 
 ?>
 
-		</div><!-- #content -->
+		</div><!-- #layout -->
+	</div><!-- #site-content -->
+	<footer id="site-footer" role="contentinfo">
+		<div class="wrap">
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="wrap">
 
-
-			</div><!-- .wrap -->
-		</footer><!-- #colophon -->
-	</div><!-- .site-content-contain -->
+		</div><!-- .wrap -->
+	</footer><!-- #site-footer -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
 

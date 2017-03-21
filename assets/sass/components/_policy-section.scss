@@ -1,0 +1,118 @@
+//==
+.policy-wrapper {
+  background: #fff ;
+  padding: 20px 0;
+
+  &.policy-style {
+    position: relative;
+    margin-top: -45px;
+    z-index: 100;
+
+    @include media('<md') {
+      margin-top: 0;
+      border-bottom: solid 1px $border-color;
+    }
+  }
+
+  @include media('<=sm') {
+    .policy {
+      text-align: center;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+
+    .policy-icon,
+    .policy-text {
+      display: block !important;
+      text-align: center !important;
+    }
+  }
+}
+
+.policy {
+  text-align: center;
+
+  .policy-icon,
+  .policy-text {
+    display: inline-block;
+    text-align: left;
+
+    .icon {
+      display: inline;
+      vertical-align: inherit;
+    }
+  }
+
+  .policy-icon {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+
+  .policy-text {
+    h4, p {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    p {
+      color: $gray-color;
+      font-family: $font-family-heading;
+    }
+  }
+}
+
+.policy-block,
+.polity-block-container .policy-block {
+  text-align: left;
+  padding-right: 100px;
+
+  .policy-icon,
+  .policy-text {
+    display: block;
+  }
+
+  .policy-icon {
+    margin-bottom: 10px;
+  }
+
+  .policy-text {
+    h4 {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-family: $font-family-base;
+      text-transform: none;
+    }
+  }
+}
+
+.policy-page {
+  text-align: center;
+
+  .policy-icon {
+    display: block;
+    font-size: 40px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .policy-text {
+    text-align: center;
+
+    h3, h4 {
+      font-size: 18px;
+      margin: 30px 0;
+      letter-spacing: 3px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      font-family: $font-family-base;
+      text-transform: inherit;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+//== Alert
+.woocommerce {
+  .woocommerce-info,
+  .woocommerce-error,
+  .woocommerce-message {
+    padding: 15px !important;
+
+    &:before { content: none; }
+    a { font-weight: bold; }
+
+    @extend .alert;
+    @extend .alert-outline;
+  }
+
+  .woocommerce-error {
+    @extend .alert-danger;
+  }
+
+  .woocommerce-message {
+    @extend .alert-success;
+  }
+
+  .woocommerce-info {
+    @extend .alert-info;
+  }
+}

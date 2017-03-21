@@ -1,0 +1,15 @@
+#review_form_wrapper .comment-form {
+  @extend .row;
+
+  &-author,
+  &-email {
+    @extend .col-md-6;
+  }
+
+  &-rating,
+  &-comment,
+  &-title,
+  .form-submit {
+    @extend .col-md-12;
+  }
+}

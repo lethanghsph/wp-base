@@ -1,0 +1,186 @@
+//
+.lookbook {
+    margin-bottom: 70px;
+
+    h2 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+
+    .heading {
+        margin-bottom: 50px;
+    }
+
+    .content {
+        z-index: 1;
+        position: relative;
+        @include clearfix();
+    }
+
+    .content-body {
+        background: #fff;
+        position: relative;
+        float: right;
+        z-index: 10;
+
+        h3 {
+            margin-top: 0;
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 30px;
+        }
+
+        p {
+            color: #898989;
+            line-height: 26px;
+            margin-bottom: 45px;
+        }
+    }
+
+    .small-image {
+        display: none;
+        float: left;
+    }
+
+    .line {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        border-top: solid 3px #333;
+        width: 70px;
+        right: 50%;
+        margin-right: -(70px + 35px); // +35px padding
+    }
+    
+    &:nth-child(2n),
+    &.lookbook-left {
+        .small-image {
+            float: right;
+        }
+
+        .content-body {
+            float: left;
+        }
+
+        .line {
+            right: auto;
+            left: 50%;
+            margin-left: -(70px + 35px);
+        }
+    }
+
+    @include media(">=md") {
+        h2 {
+            text-align: center;
+            letter-spacing: 7px;
+        }
+
+        .line {
+            display: inline-block;
+        }
+
+        .small-image {
+            display: block;
+        }
+
+        .content {
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+
+        .content-body {
+            width: 50%;
+            margin-top: -100px;
+            padding: 35px;
+        }
+    }
+
+    @include media("<sm", '>=xs') {
+        h2 {
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        .content-body {
+            width: inherit;
+            margin: -100px 50px 0;
+            padding: 35px;
+        }
+    }
+}
+
+.lookbook-wrapper {
+    margin-top: 80px;
+
+    .toggle-bars {
+        float: right;
+        margin-top: 5px;
+        display: none;
+    }
+
+    .toggle-action {
+        display: block;
+    }
+
+    @include media('<=xs') {
+        .section-header {
+            h2 {
+                margin-top: 50px;
+            }
+        }
+    }
+
+    @include media('<=sm') {
+        .toggle-bars {
+            display: block;
+        }
+
+        .toggle-action {
+            display: none;
+        }
+    }
+}
+
+.lookbook-actionbar {
+    padding: 15px 0;
+    margin-bottom: 50px;
+    border-top: solid 1px $border-color;
+    border-bottom: solid 1px $border-color;
+
+    label {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+
+    strong, p {
+        line-height: 30px;
+        margin-bottom: 0;
+    }
+
+    .form-control {
+        border-color: #d5d5d5;
+    }
+
+    @include media('>=sm') {
+        .form-group {
+            margin-right: 25px;
+
+            &:last-child {
+                margin-right: 0;    
+            }
+        }
+    }
+}
+
+.lookbook-navigation-text {
+    color: $gray-color;
+    margin-top: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    .icon {
+        font-size: 10px;
+    }
+}

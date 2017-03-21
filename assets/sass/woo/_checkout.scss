@@ -1,0 +1,25 @@
+// ==
+.woocommerce-checkout {
+  .woocommerce .woocommerce-info {
+    @extend .alert-dark;
+  }
+
+  #order_review_heading,
+  .woocommerce-billing-fields h3 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  form.checkout_coupon {
+    @extend .panel;
+    @extend .panel-default;
+
+    border-radius: 0;
+    padding: 15px;
+
+    .form-row {
+      margin-bottom: 0;
+    }
+  }
+}

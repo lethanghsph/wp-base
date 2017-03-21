@@ -1,0 +1,44 @@
+.woocommerce {
+  a.button,
+  button.button,
+  input.button {
+    @extend .btn;
+
+    color: white;
+    border-radius: 0;
+    background-color: $primary-color;
+
+    &:hover,
+    &:focus {
+      color: white !important;
+      background-color: $primary-color;
+    }
+
+    &.alt {
+      color: $color-dark;
+      border-color: $color-dark;
+      background-color: transparent;
+
+      &.disabled,
+      &:disabled,
+      &[disabled]:disabled {
+        color: $color-dark;
+        border-color: $color-dark;
+        background-color: transparent;
+      }
+
+      &:hover,
+      &:focus {
+        color: white;
+        background-color: $color-dark;
+
+        &.disabled,
+        &:disabled,
+        &[disabled]:disabled {
+          color: white;
+          background-color: $color-dark;
+        }
+      }
+    }
+  }
+}

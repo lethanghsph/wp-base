@@ -1,0 +1,15 @@
+//
+@for $i from 1 through 9 {
+  $alpha: $i/10;
+  $name: $i*10;
+
+  .overlay-dark-#{$name}:before,
+  .awe-media .overlay-dark-#{$name} {
+    background-color: rgba(#333, $alpha) !important;
+  }
+
+  .overlay-light-#{$name}:before,
+  .awe-media .overlay-light-#{$name} {
+    background-color: rgba(white, $alpha) !important;
+  }
+}

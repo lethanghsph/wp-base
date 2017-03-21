@@ -1,0 +1,31 @@
+//==
+.customers-carousel {
+  color: #fff;
+  margin-bottom: 30px;
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .owl-dots,
+  .owl-controls {
+    margin-top: 50px !important;
+  }
+}
+
+.section-brands {
+  color: #fff;
+  background: #333;
+  padding: 20px 0;
+  position: relative;
+  z-index: 15;
+
+  .brands-carousel {
+    height: 80px;
+  }
+}

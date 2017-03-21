@@ -1,0 +1,67 @@
+//==
+.woocommerce p.stars a.star-1::after,
+.woocommerce p.stars a.star-2::after,
+.woocommerce p.stars a.star-3::after,
+.woocommerce p.stars a.star-4::after,
+.woocommerce p.stars a.star-5::after {
+    font-family: FontAwesome;
+}
+
+.woocommerce p.stars a.star-1::after {
+    content: "\f005";
+}
+.woocommerce p.stars a.star-1.active::after,
+.woocommerce p.stars a.star-1:hover::after {
+    content: "\f005";
+}
+
+.woocommerce p.stars a.star-2::after {
+    content: "\f005\f005";
+}
+.woocommerce p.stars a.star-2.active::after,
+.woocommerce p.stars a.star-2:hover::after {
+    content: "\f005\f005";
+}
+
+.woocommerce p.stars a.star-3::after {
+    content: "\f005\f005\f005";
+}
+.woocommerce p.stars a.star-3.active::after,
+.woocommerce p.stars a.star-3:hover::after {
+    content: "\f005\f005\f005";
+}
+
+.woocommerce p.stars a.star-4::after {
+    content: "\f005\f005\f005\f005";
+}
+.woocommerce p.stars a.star-4.active::after,
+.woocommerce p.stars a.star-4:hover::after {
+    content: "\f005\f005\f005\f005";
+}
+
+.woocommerce p.stars a.star-5::after {
+    content: "\f005\f005\f005\f005\f005";
+}
+.woocommerce p.stars a.star-5.active::after,
+.woocommerce p.stars a.star-5:hover::after {
+    content: "\f005\f005\f005\f005\f005";
+}
+
+.woocommerce .star-rating::before {
+    font-family: FontAwesome;
+    content: "\f005\f005\f005\f005\f005";
+}
+
+.woocommerce .star-rating span::before {
+    font-family: FontAwesome;
+    content: "\f005\f005\f005\f005\f005";
+}
+
+//
+.woocommerce p.stars {
+    margin-bottom: 0 !important;
+}
+
+.woocommerce p.stars a.active {
+  color: $primary-color;
+}

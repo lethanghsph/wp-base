@@ -1,0 +1,385 @@
+//==
+@import "alert";
+@import "forms";
+@import "buttons";
+@import "stars";
+
+@import "cart";
+@import "account";
+@import "checkout";
+@import "comment";
+@import "widgets";
+
+//==
+.woocommerce {
+  &-result-count,
+  .Awe_switch_list {
+    font-size: 12px;
+    float: none;
+    display: inline-block;
+  }
+}
+
+//==
+.woocommerce table.shop_attributes {
+  border-top: none !important;
+
+  td, th {
+    color: #666;
+    background-color: transparent !important;
+    border-bottom: solid 2px #e1e1e1;
+  }
+
+  tbody tr:last-child td,
+  tbody tr:last-child th {
+    border-bottom: none;
+  }
+
+  th {
+    font-weight: 400;
+  }
+
+  td {
+    text-align: right;
+  }
+}
+
+.woocommerce div.product form.cart,
+.woocommerce div.product p.cart {
+  margin-bottom: 0;
+}
+
+.woocommerce div.product form.cart div.quantity {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+
+.woocommerce .quantity .qty {
+  width: 100% !important;
+  text-align: left;
+}
+
+.woocommerce .widget_price_filter .button {
+  padding: 3px 7px;
+}
+
+.product-list-actions .awe-button.product_type_simple,
+.product-list-actions .awe-button.product_type_external {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .btn-primary;
+}
+
+.product-list.out_stock .awe-button.product_type_simple .fa,
+.product-list.out_stock .awe-button.product_type_simple .icon {
+  display: none;
+}
+
+.woocommerce-ordering select {
+  line-height: 1.4;
+}
+
+.woocommerce-result-count {
+  float: none !important;
+}
+
+.woocommerce.widget ul > li {
+  position: relative;
+  padding: 0 !important;
+}
+
+.widget.widget_product_categories {
+  .count {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+}
+
+.widget.widget_shopping_cart .widget_shopping_cart_content .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.woocommerce .product_list_widget li + li {
+  overflow: hidden;
+  margin-top: 15px !important;
+}
+
+.variations_form {
+  position: relative;
+  
+  .reset_variations {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 0;
+    width: 24px;
+    height: 24px;
+    
+    line-height: 24px;
+    text-align: center;
+
+    &:before {
+      content: '\f05c';
+      font-family: FontAwesome;
+  
+      color: #666;
+      font-size: 18px;
+      transition: all 0.25s ease;
+    }
+
+    &:hover:before,
+    &:focus:before {
+      color: $primary-color;
+    }
+  }
+}
+
+.variations .attribute-fields {
+  margin-bottom: 15px;
+}
+
+.product-list-actions .product-price {
+  top: 5px;
+  line-height: 1;
+  position: relative;
+}
+
+#content > .product .onsale {
+  left: 15px !important;
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  color: #333;
+}
+
+.woocommerce div.product form.cart .group_table {
+  width: 100%;
+
+  td {
+    padding-bottom: 0;
+    vertical-align: top;
+  }
+
+  .g-label label {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
+
+    .amount {
+      font-weight: 700;
+    }
+  }
+
+  .quantity {
+    display: inline-block;
+  }
+
+  .quantity label {
+    display: none;
+  }
+
+  .stock {
+    margin-bottom: 0;
+  }
+}
+
+.woocommerce-shipping-fields .input-checkbox {
+  top: 7px;
+}
+
+.shop_table.cart td {
+  vertical-align: middle !important;
+}
+
+.woocommerce-ordering {
+  float: none !important;
+  margin-bottom: 0 !important;
+
+  .orderby {
+    width: 130px !important;
+  }
+
+  .label-orderby > span {
+    margin-top: 4px;
+    display: inline-block;
+  }
+}
+
+.product-header-actions label {
+  margin-bottom: 0 !important;
+}
+.form-control
+#p_show,
+.woocommerce-ordering .orderby {
+  @extend .input-sm;
+  line-height: 1.4 !important;
+}
+
+#p_show {
+  height: 30px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.woocommerce a.remove {
+  font-size: inherit;
+}
+
+.woocommerce #payment #place_order,
+.woocommerce-page #payment #place_order {
+  float: none;
+}
+
+.woocommerce-shipping-fields .input-checkbox {
+  top: 10px;
+}
+
+#review_form_wrapper #submit {
+  background-color: white !important;
+  border: solid 1px $border-color !important;
+  text-transform: uppercase;
+  border-radius: 0 !important;
+  padding: 15px 50px !important;
+  transition: all 0.25s ease;
+
+  &:hover, &:focus {
+    color: white !important;
+    border-color: $primary-color !important;
+    background-color: $primary-color !important;
+  }
+}
+
+.product-details-wrapper .form-control,
+.product-header-actions .form-control {
+  border-color: $border-color;
+}
+
+.product-details-wrapper .quantity label {
+  display: block;
+}
+
+#comments > h2 {
+  margin-bottom: 10px !important;
+}
+
+.woocommerce-noreviews {
+  @extend .text-muted;
+}
+
+#comments {
+  margin-bottom: 25px;
+}
+
+.product-features ul {
+  padding-left: 0;
+}
+
+.wishlist_table .product-price {
+  font-size: 14px;
+
+  del {
+    font-size: 14px;
+  }
+}
+
+.woocommerce .product-remove a.remove {
+  width: auto;
+  height: auto;
+  font-size: 18px !important;
+  text-align: center;
+}
+
+dl.variation {
+  @extend .dl-horizontal;
+  color: #898989;
+  margin-bottom: 0;
+
+  dt {
+    width: 80px;
+    text-align: left;
+  }
+
+  dd {
+    line-height: 1;
+    margin-left: 80px;
+  }
+}
+
+.product .product-thumbnail img {
+  width: 100%;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals tr td{
+  padding: 6px;
+}
+
+.woocommerce-remove-coupon {
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+
+  color: #898989;
+  display: inline-block;
+
+  position: relative;
+  top: 1px;
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+
+  &:after {
+    content: "\f05c";
+    font-family: FontAwesome;
+    font-size: 16px;
+  }
+}
+
+.woocommerce-shipping-calculator .shipping-calculator-button {
+  font-weight: 700;
+}
+
+.woocommerce-checkout-review-order-table .product-image > a {
+  display: block;
+  width: 90px;
+  overflow: hidden;
+}
+
+.woocommerce .order_details {
+  border: 1px dashed #ddd;
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals table {
+  width: 100%;
+}
+
+.woocommerce ul#shipping_method li {
+  text-indent: 0;
+  padding: 0;
+
+  .radio, .checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  top: 4px !important;
+}

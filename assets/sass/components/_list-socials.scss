@@ -1,0 +1,48 @@
+//
+.list-socials {
+  display: inline-block;
+  @include list-unstyled();
+  margin-bottom: 0;
+
+  > li {
+    display: inline-block;
+    > a {
+      color: $gray-color;
+      display: inline-block;
+      padding: 0 5px;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+
+    &:last-child > a {
+      margin-right: 0;
+    }
+  }
+
+  &.list-small > li > a {
+    font-size: 12px;
+  }
+  &.list-large > li > a {
+    font-size: 16px;
+  }
+  &.list-xlarge > li > a {
+    font-size: 18px;
+  }
+  &.list-xxlarge > li > a {
+    font-size: 20px;
+  }
+
+  &.list-dark > li > a {
+    color: #333;
+  }
+  &.list-light > li > a {
+    color: #fff;
+  }
+
+  &.list-dark > li > a:hover,
+  &.list-light > li > a:hover {
+    color: $hover-color;
+  }
+}
