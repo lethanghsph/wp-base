@@ -15,30 +15,12 @@
 @import "base/helpers";
 
 /*--------------------------------------------------------------
-3.0 Layout
+3.0 Compoments
 --------------------------------------------------------------*/
-@import "layouts/layout";
-@import "layouts/sidebar";
-// @import "layouts/header";
-// @import "layouts/footer";
-// @import "layouts/post";
-// @import "layouts/product";
-
-/*--------------------------------------------------------------
-4.0 WP
---------------------------------------------------------------*/
-// @import "wp/widgets";
-// @import "wp/widget-search";
-// @import "wp/widget-calendar";
-// @import "wp/comment-form";
-@import "wp/wp-classes";
-
-/*--------------------------------------------------------------
-5.0 Compoments
---------------------------------------------------------------*/
+@import "components/awe-nav";
 // @import "components/alert";
-// @import "components/forms";
-// @import "components/buttons";
+@import "components/forms";
+@import "components/buttons";
 // @import "components/divider";
 // @import "components/blockquote";
 // @import "components/progress-bars";
@@ -64,7 +46,6 @@
 // @import "components/subscible";
 
 // @import "components/awe-box";
-@import "components/awe-nav";
 // @import "components/awe-media";
 // @import "components/awe-counting";
 // @import "components/awe-page-loading";
@@ -75,6 +56,25 @@
 // @import "components/ranger";
 // @import "components/owl-carousel";
 // @import "components/magnific-popup";
+
+/*--------------------------------------------------------------
+4.0 Layout
+--------------------------------------------------------------*/
+@import "layouts/layout";
+@import "layouts/sidebar";
+// @import "layouts/header";
+// @import "layouts/footer";
+// @import "layouts/post";
+// @import "layouts/product";
+
+/*--------------------------------------------------------------
+5.0 WP
+--------------------------------------------------------------*/
+@import "wp/widgets";
+@import "wp/widget-search";
+@import "wp/widget-calendar";
+// @import "wp/comment-form";
+@import "wp/wp-classes";
 
 /*--------------------------------------------------------------
 5.0 WooCommerce

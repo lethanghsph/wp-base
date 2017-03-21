@@ -24,9 +24,12 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'wpbase' ); ?></a>
 
 	<?php print( WPBase()->header->actionHeader() ); // WPCS: XSS OK. ?>
 
 	<div id="site-content" <?php WPBase()->extra->wpbase_content_class() ?>>
-		<div id="layout" <?php WPBase()->extra->wpbase_layout_class() ?>>
+
+	<?php if ( empty( $GLOBALS['hidden_layout'] ) ) : ?>
+		<div id="layout" <?php WPBase()->extra->wpbase_layout_class( isset( $GLOBALS['layout_class'] ) ? $GLOBALS['layout_class'] : '' ) ?>>
+	<?php endif ?>

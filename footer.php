@@ -13,8 +13,10 @@
  */
 
 ?>
-
+	<?php if ( empty( $GLOBALS['hidden_layout'] ) ) : ?>
 		</div><!-- #layout -->
+	<?php endif ?>
+
 	</div><!-- #site-content -->
 	<footer id="site-footer" role="contentinfo">
 		<div class="wrap">

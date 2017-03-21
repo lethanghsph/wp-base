@@ -39,6 +39,7 @@ final class WPBase {
 		$this->load_config();
 		$this->header = new WPBase_Header();
 		$this->extra = new WPBase_Extra();
+		$this->options = new WPBase_Options();
 	}
 
 	/**
@@ -48,6 +49,7 @@ final class WPBase {
 		get_template_part( 'config/wpbase-config' );
 		get_template_part( 'config/wpbase-header' );
 		get_template_part( 'config/wpbase-extra' );
+		get_template_part( 'config/wpbase-options' );
 	}
 }
 
