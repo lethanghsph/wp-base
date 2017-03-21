@@ -26,7 +26,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
-	<?php echo WPBase()->header->actionHeader() ?>
+	<?php print( WPBase()->header->actionHeader() ); // WPCS: XSS OK. ?>
 
-	<div class="site-content-contain">
-		<div id="content" class="site-content">
+	<div id="content" <?php WPBase()->extra->wpbase_content_class() ?>>
+		<div id="layout" <?php WPBase()->extra->wpbase_layout_class() ?>>

@@ -16,4 +16,8 @@ class WPBase_Header extends WPBase_Config {
 		$template_parts = 'template-parts/header/header.php';
 		$this->load_template_part( $template_parts );
 	}
+
+	// public function addSettings() {
+		
+	// }
 }
