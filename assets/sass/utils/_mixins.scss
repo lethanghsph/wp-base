@@ -1,19 +1,8 @@
-//==
-@import "../vendor/include-media";
-
-// ==
-@import "../vendor/bootstrap/mixins";
+@import "vendor/bootstrap/mixins";
 @import "mixins/bootstrap";
 
-//==
-@import "mixins/bem";
-@import "mixins/box-skew";
 @import "mixins/center";
-@import "mixins/clearfix";
 @import "mixins/ease";
-@import "mixins/hide-text";
 @import "mixins/position";
 @import "mixins/selection";
-@import "mixins/size";
-@import "mixins/text-overflow";
-@import "mixins/box-arrow";
+@import "mixins/utils";

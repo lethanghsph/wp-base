@@ -14,14 +14,14 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function twentyseventeen_setup() {
+function wpbase_setup() {
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyseventeen
+	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/wpbase
 	 * If you're building a theme based on Twenty Seventeen, use a find and replace
-	 * to change 'twentyseventeen' to the name of your theme in all the template files.
+	 * to change 'wpbase' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'twentyseventeen' );
+	load_theme_textdomain( 'wpbase' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -41,20 +41,20 @@ function twentyseventeen_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// Set post-thumbnails size.
-	//set_post_thumbnail_size( 900, 560, true );
+	set_post_thumbnail_size( 870, 330, true );
 
-	add_image_size( 'twentyseventeen-featured-image', 2000, 1200, true );
-
-	add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
+	add_image_size( 'wpbase-medium', 370, 290, true );
+	add_image_size( 'wpbase-medium-vertical', 370, 420, true );
+	add_image_size( 'wpbase-large', 740, 420, true );
+	add_image_size( 'wpbase-room-medium', 600, 460, true );
 
 	// Set the default content width.
 	$GLOBALS['content_width'] = 600;
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'top'    => __( 'Top Menu', 'twentyseventeen' ),
-		'social' => __( 'Social Links Menu', 'twentyseventeen' ),
+		'top'    => __( 'Top Menu', 'wpbase' ),
+		'social' => __( 'Social Links Menu', 'wpbase' ),
 	) );
 
 	/*
@@ -97,7 +97,7 @@ function twentyseventeen_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, and column width.
  	 */
-	add_editor_style( array( 'assets/css/editor-style.css', twentyseventeen_fonts_url() ) );
+	add_editor_style( array( 'assets/css/editor-style.css', wpbase_fonts_url() ) );
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
@@ -141,15 +141,15 @@ function twentyseventeen_setup() {
 		// Create the custom image attachments used as post thumbnails for pages.
 		'attachments' => array(
 			'image-espresso' => array(
-				'post_title' => _x( 'Espresso', 'Theme starter content', 'twentyseventeen' ),
+				'post_title' => _x( 'Espresso', 'Theme starter content', 'wpbase' ),
 				'file' => 'assets/images/espresso.jpg', // URL relative to the template directory.
 			),
 			'image-sandwich' => array(
-				'post_title' => _x( 'Sandwich', 'Theme starter content', 'twentyseventeen' ),
+				'post_title' => _x( 'Sandwich', 'Theme starter content', 'wpbase' ),
 				'file' => 'assets/images/sandwich.jpg',
 			),
 			'image-coffee' => array(
-				'post_title' => _x( 'Coffee', 'Theme starter content', 'twentyseventeen' ),
+				'post_title' => _x( 'Coffee', 'Theme starter content', 'wpbase' ),
 				'file' => 'assets/images/coffee.jpg',
 			),
 		),
@@ -173,7 +173,7 @@ function twentyseventeen_setup() {
 		'nav_menus' => array(
 			// Assign a menu to the "top" location.
 			'top' => array(
-				'name' => __( 'Top Menu', 'twentyseventeen' ),
+				'name' => __( 'Top Menu', 'wpbase' ),
 				'items' => array(
 					'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
 					'page_about',
@@ -184,7 +184,7 @@ function twentyseventeen_setup() {
 
 			// Assign a menu to the "social" location.
 			'social' => array(
-				'name' => __( 'Social Links Menu', 'twentyseventeen' ),
+				'name' => __( 'Social Links Menu', 'wpbase' ),
 				'items' => array(
 					'link_yelp',
 					'link_facebook',
@@ -203,11 +203,11 @@ function twentyseventeen_setup() {
 	 *
 	 * @param array $starter_content Array of starter content.
 	 */
-	$starter_content = apply_filters( 'twentyseventeen_starter_content', $starter_content );
+	$starter_content = apply_filters( 'wpbase_starter_content', $starter_content );
 
 	add_theme_support( 'starter-content', $starter_content );
 }
-add_action( 'after_setup_theme', 'twentyseventeen_setup' );
+add_action( 'after_setup_theme', 'wpbase_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -216,7 +216,7 @@ add_action( 'after_setup_theme', 'twentyseventeen_setup' );
  *
  * @global int $content_width
  */
-function twentyseventeen_content_width() {
+function wpbase_content_width() {
 
 	$content_width = $GLOBALS['content_width'];
 
@@ -225,7 +225,7 @@ function twentyseventeen_content_width() {
 
 	// Check if layout is one column.
 	if ( 'one-column' === $page_layout ) {
-		if ( twentyseventeen_is_frontpage() ) {
+		if ( wpbase_is_frontpage() ) {
 			$content_width = 644;
 		} elseif ( is_page() ) {
 			$content_width = 740;
@@ -244,9 +244,9 @@ function twentyseventeen_content_width() {
 	 *
 	 * @param $content_width integer
 	 */
-	$GLOBALS['content_width'] = apply_filters( 'twentyseventeen_content_width', $content_width );
+	$GLOBALS['content_width'] = apply_filters( 'wpbase_content_width', $content_width );
 }
-add_action( 'template_redirect', 'twentyseventeen_content_width', 0 );
+add_action( 'template_redirect', 'wpbase_content_width', 0 );
 
 /**
  * Add preconnect for Google Fonts.
@@ -257,8 +257,8 @@ add_action( 'template_redirect', 'twentyseventeen_content_width', 0 );
  * @param string $relation_type  The relation type the URLs are printed.
  * @return array $urls           URLs to print for resource hints.
  */
-function twentyseventeen_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'twentyseventeen-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+function wpbase_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'wpbase-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
@@ -267,7 +267,7 @@ function twentyseventeen_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
-add_filter( 'wp_resource_hints', 'twentyseventeen_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'wpbase_resource_hints', 10, 2 );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
@@ -277,19 +277,19 @@ add_filter( 'wp_resource_hints', 'twentyseventeen_resource_hints', 10, 2 );
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
-function twentyseventeen_excerpt_more( $link ) {
+function wpbase_excerpt_more( $link ) {
 	if ( is_admin() ) {
 		return $link;
 	}
-
-	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
-		esc_url( get_permalink( get_the_ID() ) ),
+	$link = ' &hellip; ';
+	// $link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+	// 	esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ), get_the_title( get_the_ID() ) )
-	);
-	return ' &hellip; ' . $link;
+		// sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wpbase' ), get_the_title( get_the_ID() ) )
+	// );
+	return $link;
 }
-add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
+add_filter( 'excerpt_more', 'wpbase_excerpt_more' );
 
 /**
  * Handles JavaScript detection.
@@ -298,20 +298,20 @@ add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
  *
  * @since Twenty Seventeen 1.0
  */
-function twentyseventeen_javascript_detection() {
+function wpbase_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'twentyseventeen_javascript_detection', 0 );
+add_action( 'wp_head', 'wpbase_javascript_detection', 0 );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function twentyseventeen_pingback_header() {
+function wpbase_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
 	}
 }
-add_action( 'wp_head', 'twentyseventeen_pingback_header' );
+add_action( 'wp_head', 'wpbase_pingback_header' );
 
 
 
@@ -324,7 +324,24 @@ add_action( 'wp_head', 'twentyseventeen_pingback_header' );
  *
  * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template.
  */
-function twentyseventeen_front_page_template( $template ) {
+function wpbase_front_page_template( $template ) {
 	return is_home() ? '' : $template;
 }
-add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
+add_filter( 'frontpage_template',  'wpbase_front_page_template' );
+
+/**
+ * Move comment field to bottom.
+ *
+ * @param  array $fields The comment fields.
+ * @return array
+ */
+function wpbase_change_comment_field( $fields ) {
+	$comment_field = $fields['comment'];
+
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+
+	return $fields;
+}
+add_filter( 'comment_form_fields', 'wpbase_change_comment_field' );
+

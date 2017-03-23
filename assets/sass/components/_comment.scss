@@ -1,76 +1,197 @@
-// Comment
+#comments {
+  input, textarea {
+    @extend .form-control;
+    background-color: #fff;
+  }
+}
+.form-small {
+  width: 100%;
+
+  @include media(">=sm") {
+    width: 31%;
+    display: inline-block;
+
+    &:first-child{
+      margin-right: 25px;
+    }
+  }
+
+  @include media(">=md") {
+    &:first-child{
+      margin-right: 30px;
+    }
+  }
+}
+
+.submit-button {
+  border-radius: $border-radius-base;
+  background-color: $color-1st;
+  font-family: $font-2nd;
+  color:  #ffffff;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 0;
+  font-size: 16px;
+  border: none;
+}
+
+.comment-submit-button {
+  width: 100%;
+}
+
+.comments-title {
+  font-family: $font-2nd;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-4th;
+  text-align: center;
+
+  @include media(">=xs") {
+    text-align: left;
+  }
+
+  span {
+    color: $color-1st;
+  }
+}
+
 .comments-area {
-  padding: 30px 0;
+  margin-top: 50px;
 
-  .comments-list {
-    border-bottom: solid 1px #e3e3e3;
-    margin-bottom: 30px;
+  @include media(">=xs") {
+    margin-top: 90px;
+  }
 
-    > ol {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 0;
+  textarea,
+  #author,
+  #email,
+  #url {
+    background-color: #ffffff;
+  }
 
-      > li {
-        ol {
-          background: #fbfbfb;
-          list-style: none;
+  ol {
+    padding-left: 0;
+    list-style: none;
 
-          @include media('>=sm') {
-            padding-left: 100px;
-          }
-        }
+    @include media(">=xs") {
+      padding-left: 30px;
+    }
+  }
+}
+
+.comment-respond {
+  margin-top: 90px;
+}
+
+.comment__avatar{
+    display: table-cell;
+    vertical-align: top;
+    position: relative;
+    padding-right: 15px;
+    padding-top: 25px;
+
+    a {
+      display: inline-block;
+      border-radius: 50%;
+      overflow: hidden;
+      width: 70px;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      border: 10px solid transparent;
+      border-right: 10px solid #ffffff;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      transform: translateY(-50%);
+    }
+}
+
+.comment__container {
+  display: table-cell;
+  vertical-align: top;
+  background-color:  #ffffff;
+  box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  padding: 15px;
+  position: relative;
+
+  @include media(">=xs") {
+    padding: 30px 40px;
+  }
+
+  .comment__author {
+    font-weight: 500;
+    font-size: 18px;
+    color: $color-4th;
+    display: inline;
+    font-family: $font-1st;
+
+    a {
+      color: $color-4th;
+      font-weight: 500;
+    }
+  }
+
+  .comment__meta {
+    margin-bottom: 15px;
+  }
+
+  .comment__metadata {
+    display: block;
+
+    @include media(">=xs") {
+      display: block;
+    }
+    a {
+      font-size: 12px;
+      font-weight: 500;
+
+      @include media(">=xs") {
+        font-size: 14px;
       }
     }
   }
 
-  .comment-title,
-  .reply-comment-title {
-    font-family: Montserrat;
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-  }
-
-  .comment-title {
-    margin-bottom: 0;
+  .comment__content {
+    font-size: 14px;
+    font-weight: 400;
   }
 }
 
-.comment {
-  zoom: 1;
-  overflow: hidden;
-  padding: 30px 0;
-
-  .comment-body {
-    overflow: hidden;
+.comment__action {
+  display: inline;
+  position: relative;
+  top: auto;
+  right: auto;
+  a:first-child {
+    margin-right: 10px;
+  }
+  @include media(">=xs") {
+    position: absolute;
+    top: 30px;
+    right: 30px;
   }
 
-  .comment-avatar {
-    display: block;
-    float: left;
-    margin-right: 30px;
-
-    @include media('<sm') {
-      width: 45px;
-      margin-right: 15px;
+  .comment-reply-link{
+    font-size: 0;
+    &:before {
+      content: "\f112";
+      font-size: 19px;
+      font: normal normal normal 14px/1 FontAwesome;
     }
   }
+}
 
-  .comment-title {
-    font-size: 14px;
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
+.comment__body {
+  margin-bottom: 30px;
+}
 
-  .comment-text {
-    color: #606060;
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-
-  .reply-comment-action {
-    font-size: 12px;
-  }
+.comment-author-admin >.comment__body >.comment__container,
+.bypostauthor >.comment__body >.comment__container {
+  border-top: 3px solid $color-1st;
 }

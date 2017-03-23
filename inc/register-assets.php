@@ -1,16 +1,15 @@
 <?php
 /**
- * Twenty Seventeen register assets.
+ * WPBase register assets.
  *
- * @package WordPress
- * @subpackage Twenty_Seventeen
+ * @package WPBase
  * @since 1.0
  */
 
 /**
  * Register custom fonts.
  */
-function twentyseventeen_fonts_url() {
+function wpbase_fonts_url() {
 	$fonts_url = '';
 
 	/**
@@ -18,41 +17,50 @@ function twentyseventeen_fonts_url() {
 	 * supported by Libre Franklin, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$libre_franklin = _x( 'on', 'Libre Franklin font: on or off', 'twentyseventeen' );
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
 
-	if ( 'off' !== $libre_franklin ) {
-		$font_families = array();
-
-		$font_families[] = 'Libre Franklin:300,300i,400,400i,600,600i,800,800i';
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	if ( 'off' !== _x( 'on', 'Poppins font: on or off', 'wpbase' ) ) {
+		$fonts[] = 'Poppins';
+	}
+	if ( 'off' !== _x( 'on', 'Comfortaa font: on or off', 'wpbase' ) ) {
+		$fonts[] = 'Comfortaa';
+	}
+	if ( 'off' !== _x( 'on', 'Source Code Pro font: on or off', 'wpbase' ) ) {
+		$fonts[] = 'Source Code Pro:400,500';
 	}
 
-	return esc_url_raw( $fonts_url );
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url( $fonts_url );
 }
 
 /**
  * Enqueue scripts and styles.
  */
-function twentyseventeen_scripts() {
+function wpbase_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'twentyseventeen-fonts', twentyseventeen_fonts_url(), array(), null );
-	wp_enqueue_style( 'fonts-awesome', get_template_directory_uri() . '/assets/css/lib/font-awesome.css' );
+	wp_enqueue_style( 'wpbase-fonts', wpbase_fonts_url(), array(), null );
+	wp_enqueue_style( 'fonts-awesome', get_template_directory_uri() . '/assets/css/lib/font-awesome.css', array(), '4.7.0' );
+	wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/lib/slick.css', array(), '1.6.0' );
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/main.css' );
+	wp_enqueue_style( 'wpbase-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'wpbase', get_template_directory_uri() . '/assets/css/main.css' );
 
 	wp_enqueue_script( 'tl-menu', get_template_directory_uri() . '/assets/js/plugins/menu.js', array( 'jquery' ), '1.0.0', true );
-	wp_enqueue_script( 'main-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/plugins/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/plugins/slick.min.js', array( 'jquery' ), '1.6.0', true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
+add_action( 'wp_enqueue_scripts', 'wpbase_scripts' );

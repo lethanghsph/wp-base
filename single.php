@@ -17,22 +17,30 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/post/content', get_post_format() );
+				do_action( 'wpbase_single_before_content' );
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+				get_template_part( 'template-parts/post/content', get_post_format() );
 
-					the_post_navigation( array(
-						'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper"></span>%title</span>',
-						'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper"></span></span>',
-					) );
+				/**
+				 * Wpbase_single_after_content hook.
+				 *
+				 * @hooked WPBase_Post_Template_Tag->wpbase_render_navigation. 10.
+				 * @hooked WPBase_Post_Template_Tag->wpbase_render_sharing. 20.
+				 * @hooked WPBase_Post_Template_Tag->wpbase_render_tags. 30.
+				 * @hooked WPBase_Post_Template_Tag->wpbase_render_related_posts. 40.
+				 */
+				do_action( 'wpbase_single_after_content' );
 
-				endwhile; // End of the loop.
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+
+			endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->

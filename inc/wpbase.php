@@ -40,6 +40,10 @@ final class WPBase {
 		$this->header = new WPBase_Header();
 		$this->extra = new WPBase_Extra();
 		$this->options = new WPBase_Options();
+		$this->sidebar = new WPBase_Sidebar();
+		$this->post_format = new WPBase_Post_Format();
+		$this->post_template = WPBase_Post_Template_Tag::get_instance();
+		$this->social = WPBase_Social::get_instance();
 	}
 
 	/**
@@ -50,6 +54,9 @@ final class WPBase {
 		get_template_part( 'config/wpbase-header' );
 		get_template_part( 'config/wpbase-extra' );
 		get_template_part( 'config/wpbase-options' );
+		get_template_part( 'config/wpbase-sidebar' );
+		get_template_part( 'config/wpbase-post-format' );
+		get_template_part( 'config/wpbase-social' );
 	}
 }
 

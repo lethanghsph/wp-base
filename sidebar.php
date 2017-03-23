@@ -13,13 +13,14 @@ if ( isset( $GLOBALS['hidden_blog_sidebar'] ) && true == $GLOBALS['hidden_blog_s
 	return;
 }
 
-// if ( ! is_active_sidebar( $sidebar_name = WPBase_Sidebar::get_sidebar() ) ) {
-// 	return;
-// }
+if ( ! is_active_sidebar( $sidebar_name = WPBase()->sidebar->get_sidebar() ) ) {
+	return;
+}
 
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php dynamic_sidebar( $sidebar_name ); ?>
 </aside><!-- #secondary -->
+
 

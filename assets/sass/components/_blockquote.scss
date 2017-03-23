@@ -1,56 +1,54 @@
-//
-.blockquote {
-  padding: 30px 20px;
+blockquote {
+  color: $color-4th;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 500;
+  padding: 31px 30px 30px 104px;
+  position: relative;
   border-left: 0;
-  overflow: hidden;
-  text-align: center;
+  background-color: rgba(86, 191, 209, 0.07);
 
-  > p {
-    color: #333;
-    font-size: 16px;
-    font-style: italic;
-    line-height: 30px;
-    text-align: center;
-    position: relative;
-    margin: 0;
-
-    &:before,
-    &:after {
-      font-family: 'aweicon';
-    }
-
-    &:before {
-      content: "\e619";
-      margin-right: 10px;
-    }
-
-    &:after {
-      content: "\e61a";
-      margin-left: 10px;
-    }
+  @include media(">=sm") {
+    margin-left: 25px;
   }
 
-  footer {
-    color: #acacac;
-    font-size: 12px;
-    font-weight: 700;
-    margin-top: 40px;
-
-    h4 {
-      color: #333333;
-      font-size: 14px;
-      margin-top: 0;
-    }
-
-    &:before {
-      content: "";
-    }
+  &:before {
+    content: "“";
+    font-size: 126px;
+    line-height: 1;
+    color: $color-1st;
+    position: absolute;
+    top: 34px;
+    left: 42px;
   }
 
-  &.large {
-    > p {
-      font-size: 22px;
-      line-height: 45px;
+  cite,
+  footer,
+  small {
+    display: block;
+    margin-top: 12px;
+    margin-left: -4px;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+
+    &:before {
+      content: "- ";
     }
+  }
+}
+
+.blockquote--dark {
+  background-color: #888d99;
+  color: #fff;
+
+  cite,
+  footer,
+  small {
+    color: #fff;
+  }
+
+  &:before {
+    color: #fff;
   }
 }

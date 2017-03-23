@@ -31,5 +31,5 @@
 	<div id="site-content" <?php WPBase()->extra->wpbase_content_class() ?>>
 
 	<?php if ( empty( $GLOBALS['hidden_layout'] ) ) : ?>
-		<div id="layout" <?php WPBase()->extra->wpbase_layout_class( isset( $GLOBALS['layout_class'] ) ? $GLOBALS['layout_class'] : '' ) ?>>
+		<div id="layout" <?php WPBase()->extra->wpbase_layout_class( isset( $GLOBALS['wpbase_layout_class'] ) ? $GLOBALS['wpbase_layout_class'] : '' ) ?>>
 	<?php endif ?>

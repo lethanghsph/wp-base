@@ -1,22 +1,9 @@
-// ==
-@include selection() {
-  color: $color-white;
-  background: $hover-color;
-}
-
-html, body {
-  font-size: 14px;
+body {
   overflow-x: hidden;
   position: relative;
 }
-
-a, button {
-  transition: all 0.25s ease-in-out;
-
-  &:focus,
-  &:active {
-    outline: none !important;
-  }
+a {
+  transition: all .3s ease;
 }
 
 img {
@@ -26,19 +13,12 @@ img {
   border: 0;
 }
 
-label {
-  font-size: 12px;
-  font-family: $font-family-heading;
-  font-weight: 400;
-
-  .required,
-  sup { color: red; }
-}
-
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  line-height: 1.4;
+  margin-top: 0;
+  letter-spacing: 1px;
 }
+
 /* Lists */
 ul,
 ol {

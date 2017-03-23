@@ -9,7 +9,7 @@
 <header id="site-header" class="site-header">
 	<div class="container">
 		<div class="header-logo">
-			<h1 class="h2"><?php esc_html_e( 'BASE', 'wpbase' ) ?></h1>
+			<h1 class="h2"><a href="<?php echo esc_url( home_url( '/' ) ) ?>"><?php esc_html_e( 'BASE', 'wpbase' ) ?></a></h1>
 		</div>
 		<div class="header-icon">
 			<div class="item">

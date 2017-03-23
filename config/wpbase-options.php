@@ -21,7 +21,7 @@ class WPBase_Options {
 		$name = sanitize_key( $name );
 
 		if ( is_null( $default ) ) {
-			$default = wpbase_option_default( $name );
+			$default = $this->wpbase_option_default( $name );
 		}
 
 		if ( 'option' === $source ) {

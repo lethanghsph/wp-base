@@ -1,0 +1,60 @@
+// Visually hidden element.
+@mixin vhidden() {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// Visually display element.
+@mixin vdisplay {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin transform($trans) {
+  -webkit-transform: $trans;
+  -moz-transform: $trans;
+  -ms-transform: $trans;
+  transform: $trans;
+}
+
+@mixin transition($trans) {
+  -webkit-transition: $trans;
+  -moz-transition: $trans;
+  -o-transition: $trans;
+  transition: $trans;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+// FontAwesome
+%fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin fa($icon) {
+  content: $icon;
+  @extend %fa;
+}
+
+// Overlay background
+@mixin overlay($bg: black, $alpha: 0.5, $z-index: 5) {
+  @include absolute(0,0,0,0);
+  background-color: rgba($bg, $alpha);
+  z-index: $z-index;
+}
+
+// PADDING TOP IMAGE
+@mixin paddingTop($width, $height) {
+  content: "";
+  display: block;
+  padding-top: percentage($height/$width);
+}

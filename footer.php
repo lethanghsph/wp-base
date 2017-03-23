@@ -13,7 +13,7 @@
  */
 
 ?>
-	<?php if ( empty( $GLOBALS['hidden_layout'] ) ) : ?>
+	<?php if ( empty( $GLOBALS['wpbase_hidden_layout'] ) ) : ?>
 		</div><!-- #layout -->
 	<?php endif ?>
 

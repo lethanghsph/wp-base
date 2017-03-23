@@ -6,78 +6,29 @@
 1.0 Vendor
 --------------------------------------------------------------*/
 @import "vendor/bootstrap";
+@import "vendor/magnific-popup";
+@import "vendor/include-media";
 
 /*--------------------------------------------------------------
 2.0 Base
 --------------------------------------------------------------*/
 @import "base/base";
-@import "base/typography";
 @import "base/helpers";
 
 /*--------------------------------------------------------------
 3.0 Compoments
 --------------------------------------------------------------*/
-@import "components/awe-nav";
-// @import "components/alert";
+@import "components/navs";
 @import "components/forms";
 @import "components/buttons";
-// @import "components/divider";
-// @import "components/blockquote";
-// @import "components/progress-bars";
-// @import "components/dropdown";
-// @import "components/breadcrumb";
-// @import "components/pagination";
-
-// @import "components/colors";
-// @import "components/overlay";
-// @import "components/background";
-// @import "components/list-socials";
-
-// @import "components/main-header";
-// @import "components/section-header";
-// @import "components/main-sliders-section";
-// @import "components/policy-section";
-// @import "components/news-section";
-// @import "components/customers-section";
-// @import "components/categories-section";
-
-// @import "components/comment";
-// @import "components/woo-brand";
-// @import "components/subscible";
-
-// @import "components/awe-box";
-// @import "components/awe-media";
-// @import "components/awe-counting";
-// @import "components/awe-page-loading";
-// @import "components/loader";
-
-// @import "components/megamenu";
-// @import "components/nanoscroller";
-// @import "components/ranger";
-// @import "components/owl-carousel";
-// @import "components/magnific-popup";
+@import "components/pagination";
+@import "components/blockquote";
+@import "components/comment";
+@import "components/slick-theme";
+@import "components/searchform";
 
 /*--------------------------------------------------------------
-4.0 Layout
---------------------------------------------------------------*/
-@import "layouts/layout";
-@import "layouts/sidebar";
-// @import "layouts/header";
-// @import "layouts/footer";
-// @import "layouts/post";
-// @import "layouts/product";
-
-/*--------------------------------------------------------------
-5.0 WP
---------------------------------------------------------------*/
-@import "wp/widgets";
-@import "wp/widget-search";
-@import "wp/widget-calendar";
-// @import "wp/comment-form";
-@import "wp/wp-classes";
-
-/*--------------------------------------------------------------
-5.0 WooCommerce
+4.0 WooCommerce
 --------------------------------------------------------------*/
 // @import "woo/woo";
 
@@ -93,5 +44,22 @@
 // @import "pages/home";
 // @import "pages/lookbook";
 // @import "pages/portfolio";
+
+/*--------------------------------------------------------------
+5.0 Layout
+--------------------------------------------------------------*/
+@import "layouts/layout";
+// @import "layouts/sidebar";
+// @import "layouts/header";
+// @import "layouts/footer";
+@import "layouts/post";
+// @import "layouts/product";
+
+
+/*--------------------------------------------------------------
+6.0 WP
+--------------------------------------------------------------*/
+@import "wp/widgets";
+@import "wp/wp-classes";
 
 

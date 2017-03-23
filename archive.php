@@ -4,31 +4,34 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Twenty_Seventeen
+ * @package WPBase
  * @since 1.0
  * @version 1.0
  */
 
 get_header(); ?>
 
-<div class="wrap">
-
-	<?php if ( have_posts() ) : ?>
+	<div class="container">
 		<header class="page-header">
 			<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
 			?>
 		</header><!-- .page-header -->
-	<?php endif; ?>
-
+	</div>
+	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
-			<?php
+
+		if ( have_posts() ) : 
+
+			/**
+			 * Begin the loop hook.
+			 */
+			do_action( 'wpbase_begin_the_loop' );
+
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -41,11 +44,12 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_pagination( array(
-				'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-			) );
+			/**
+			 * End the loop hook.
+			 */
+			do_action( 'wpbase_end_the_loop' );
+
+			WPBase()->extra->wpbase_pager();
 
 		else :
 
@@ -55,7 +59,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
 
-<?php get_footer();
+<?php
+get_sidebar();
+get_footer();
