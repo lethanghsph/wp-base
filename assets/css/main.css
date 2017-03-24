@@ -7030,6 +7030,25 @@ blockquote {
   .site-layout.no-sidebar .widget-area, .site-layout.sidebar-none .widget-area {
     display: none; }
 
+.affix {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  z-index: 99; }
+
+.affix-top {
+  position: static;
+  top: -35px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+
+.header-logo .h2 {
+  margin: 0;
+  line-height: 40px;
+  padding: 15px 10px; }
+
 .entry-title {
   font-size: 2.6rem;
   font-family: "Comfortaa", cursive, sans-serif;

@@ -1,0 +1,19 @@
+  .affix {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    z-index: 99;
+  }
+  .affix-top {
+    position: static;
+    top: -35px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+  .header-logo .h2 {
+    margin: 0;
+    line-height: 40px;
+    padding: 15px 10px;
+  }

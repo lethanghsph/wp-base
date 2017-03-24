@@ -10,4 +10,8 @@ return array(
 
 	// Related post.
 	'related_post_count'              => '2',
+
+	// WooCommerce.
+	'wc_column'                       => '3',
+	'shop_ppp'                        => '12',
 );

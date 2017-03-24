@@ -6,7 +6,7 @@
  */
 ?>
 
-<header id="site-header" class="site-header">
+<header id="site-header" class="site-header" data-spy="affix" data-offset-top="150">
 	<div class="container">
 		<div class="header-logo">
 			<h1 class="h2"><a href="<?php echo esc_url( home_url( '/' ) ) ?>"><?php esc_html_e( 'BASE', 'wpbase' ) ?></a></h1>

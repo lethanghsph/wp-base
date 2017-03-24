@@ -57,6 +57,7 @@ final class WPBase {
 		get_template_part( 'config/wpbase-sidebar' );
 		get_template_part( 'config/wpbase-post-format' );
 		get_template_part( 'config/wpbase-social' );
+		get_template_part( 'config/wpbase-woocommerce' );
 	}
 }
 
