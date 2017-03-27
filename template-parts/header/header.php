@@ -4,6 +4,7 @@
  *
  * @package wpbase
  */
+$test = WPBase_WooCoomerce::get_instance();
 ?>
 
 <header id="site-header" class="site-header" data-spy="affix" data-offset-top="150">
@@ -23,6 +24,15 @@
 				<div class="hide">
 				<?php get_search_form(); ?>
 				</div>
+			</div>
+			<div class="item dropdown">
+				
+				<?php echo $test->header_minicart_link() ?>
+					<div class="dropdown-menu">
+						
+					
+				<?php echo $test->header_minicart() ?>
+</div>
 			</div>
 		</div>
 		<?php if ( has_nav_menu( 'top' ) ) : ?>

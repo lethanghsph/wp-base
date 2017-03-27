@@ -9,6 +9,7 @@
 			this.mobileMenu();
 			this.getSlick();
 			this.tooltip();
+			this.flyAddToCard();
 		},
 		mobileMenu: function() {
 			$( '.side-slide__menu' ).tl_menu();
@@ -68,7 +69,64 @@
 
 		tooltip: function() {
 			 $('[data-toggle="tooltip"]').tooltip();
-		}
+		},
+
+		flyAddToCard: function() {
+
+			var $body = $('body');
+			var $cart = $('.thangle');
+
+			var getProductImage = function($el) {
+				var $thumbs = $el.find('.wp-post-image');
+				var $images = $el.find('img');
+				console.log( $images.length );
+				if ($images.length) {
+					var $thumb = $thumbs.find('img');
+					return $thumb.length ? $thumb.eq(0) : $images.eq(0);
+				}
+
+				return false;
+			};
+
+			$body.on('adding_to_cart', function(e, $button) {
+				var $product = $button.parents('.product-type-simple');
+				console.log( $product );
+				var $imgDrag = getProductImage($product);
+
+				if ($imgDrag) {
+					var $imgClone = $imgDrag.clone();
+
+					$imgClone.offset({
+						top: $imgDrag.offset().top,
+						left: $imgDrag.offset().left
+					});
+
+					$imgClone.css({
+						'opacity': '0.75',
+						'position': 'absolute',
+						'height': '150px',
+						'width': '150px',
+						'z-index': '999999'
+					});
+
+					$imgClone.appendTo($body);
+
+					$imgClone.animate({
+						'top': $cart.offset().top + 10,
+						'left': $cart.offset().left + 10,
+						'width': 75,
+						'height': 75
+					}, 1000);
+
+					$imgClone.animate({
+						'width': 0,
+						'height': 0
+					}, function () {
+						$(this).detach();
+					});
+				}
+			});
+		},
 
 	};
 
